@@ -21,11 +21,6 @@
     align-items: center;
     justify-content: space-between;
     background-color: rgba(1, 1, 1, 0.2);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 9999;
 }
 
 .spanA {
@@ -41,6 +36,7 @@
     gap: 1.5rem;
     display: flex;
 }
+
 
 #instagram {
     color: whitesmoke;
@@ -87,129 +83,162 @@
 }
 
 body {
-    background: linear-gradient(90deg, #0f0c29, #302b63, #24243e);
-    height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: baseline
+    background: linear-gradient(135deg, #1e3c72, #2a5298);
+    /* background: linear-gradient(90deg, #0f0c29, #302b63, #24243e); */
+    min-height: 100vh;
+    padding-bottom: 2rem;
 }
 
-.lampu {
+img {
     width: 10rem;
     height: 10rem;
+    margin-left: 2rem;
+    margin-top: 1rem;
 }
 
 .containerLampu {
     display: flex;
     align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    margin-top: 8rem;
+    justify-content: flex-start;
+    gap: 2rem;
+    margin: 2rem 3rem;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 2rem;
+    box-shadow: 0 8px 50px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(40px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 1rem 2rem;
+}
+
+.containerLampu h1 {
+    width: 200px;
+    /* Atur lebar ini sesuai kebutuhan teks terpanjang */
+    margin-left: 0;
+    /* Ubah dari 2rem ke 0 karena sudah diatur padding container */
+    color: whitesmoke;
 }
 
 .tombolLampu {
     color: red;
-    font-size: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    font-size: 3.5rem;
     gap: 10px;
+    padding-right: 1rem;
     cursor: pointer;
+    margin-left: auto;
+    transition: transform 0.2s;
 }
 
-button {
-    font-size: 18px;
-    cursor: pointer;
-    width: 5rem;
+.tombolLampu:active {
+    transform: scale(0.8);
 }
+
+.lampu {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1rem;
+    /* Jarak antar lampu */
+    flex: 1;
+}
+
+img {
+    width: 6rem;
+    /* Sedikit diperkecil agar pas di layar standar */
+    height: 6rem;
+    margin: 0;
+    /* Ubah margin-left: 2rem dan margin-top menjadi 0 */
+}
+
 
 h1 {
-    color: white;
+    color: whitesmoke;
+    margin-left: 2rem;
 }
 
+/* --- MEDIA QUERY RESPONSIVE --- */
 
-/* tablet */
-@media (max-width:1365px) {
-    h1 {
-        font-size: 1rem;
+/* 1. Tampilan Tablet (max-width: 992px) */
+@media (max-width: 992px) {
+    .navbar {
+        padding: 1rem 5%;
+    }
+
+    .archivo-black-regular {
+        font-size: 1.2rem;
+    }
+
+    .containerLampu {
+        margin: 1.5rem 2rem;
+        padding: 1.2rem;
+    }
+
+    .containerLampu h1 {
+        font-size: 1.2rem;
+        width: 150px;
+    }
+
+    img {
+        width: 5rem;
+        height: 5rem;
     }
 }
 
-/* adnroid */
-@media (max-width:576px) {
+/* 2. Tampilan HP / Android (max-width: 576px) */
+@media (max-width: 576px) {
+    .navbar {
+        flex-direction: column;
+        /* Menu & icon ig/tiktok jadi atas-bawah di HP */
+        gap: 1rem;
+        text-align: center;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+    }
+
     .archivo-black-regular {
         font-size: 1rem;
     }
 
-    .navbar-icon {
-        font-size: 1.5rem;
-        gap: 0.7rem;
-        margin-top: 10px;
+    .containerLampu {
+        flex-direction: column;
+        /* Ubah susunan dari samping menjadi ke bawah */
+        align-items: center;
+        text-align: center;
+        margin: 1rem;
+        padding: 1.5rem 1rem;
+        gap: 1rem;
+    }
+
+    .containerLampu h1 {
+        width: 100%;
+        /* Judul memenuhi container */
+        font-size: 1.2rem;
     }
 
     .lampu {
-        width: 50%;
-        height: auto;
-        display: block;
+        justify-content: center;
+        width: 100%;
+    }
+
+    img {
+        width: 4.5rem;
+        /* Ukuran lampu di HP disesuaikan agar pas */
+        height: 4.5rem;
     }
 
     .tombolLampu {
-        font-size: 20px;
+        margin: 0;
+        font-size: 3rem;
+        /* Ukuran saklar lampu di HP */
     }
 
-    h1 {
-        font-size: 0.5rem;
-    }
-
-    .containerLampu {
-        margin-top: 5rem;
-    }
-
-    .navbar {
-        padding: 0.5rem 3%;
-    }
-
-    #instagram {
-        color: whitesmoke;
-        display: inline-block;
-    }
-
-    #tiktok {
-        color: whitesmoke;
-        display: inline-block;
-    }
-
-    #instagram:hover {
-        color: yellow;
-    }
-
-    #tiktok:hover {
-        color: yellow;
+    #tiktok::after {
+        padding-bottom: 0.2rem;
+        content: '';
     }
 
     #instagram::after {
         content: '';
-        display: block;
-        padding-bottom: 0;
-        border-bottom: solid 2px yellow;
-        transform: scaleX(0);
-        transition: 0.2s;
-    }
+        padding-bottom: 0.2rem;
 
-    #instagram:hover::after {
-        transform: scaleX(1);
-    }
-
-    #tiktok::after {
-        content: '';
-        display: block;
-        padding-bottom: 0;
-        border-bottom: solid 2px yellow;
-        transform: scaleX(0);
-        transition: 0.2s;
-    }
-
-    #tiktok:hover::after {
-        transform: scaleX(1);
     }
 }
