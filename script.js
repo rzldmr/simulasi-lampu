@@ -73,7 +73,6 @@ btnToggle4.addEventListener('click', function () {
         lampu8.src = 'lampu-nyala.png'
         lampu9.src = 'lampu-nyala.png'
         lampu10.src = 'lampu-nyala.png'
-        lampu11.src = 'lampu-nyala.png'
         btnToggle4.style.color = 'green'
         on4 = true
     } else {
@@ -82,7 +81,6 @@ btnToggle4.addEventListener('click', function () {
         lampu8.src = 'lampu-mati.png'
         lampu9.src = 'lampu-mati.png'
         lampu10.src = 'lampu-mati.png'
-        lampu11.src = 'lampu-mati.png'
         btnToggle4.style.color = 'red'
         on4 = false
     }
