@@ -84,7 +84,6 @@
 
 body {
     background: linear-gradient(135deg, #1e3c72, #2a5298);
-    /* background: linear-gradient(90deg, #0f0c29, #302b63, #24243e); */
     min-height: 100vh;
     padding-bottom: 2rem;
 }
@@ -112,9 +111,7 @@ img {
 
 .containerLampu h1 {
     width: 200px;
-    /* Atur lebar ini sesuai kebutuhan teks terpanjang */
     margin-left: 0;
-    /* Ubah dari 2rem ke 0 karena sudah diatur padding container */
     color: whitesmoke;
 }
 
@@ -143,10 +140,8 @@ img {
 
 img {
     width: 6rem;
-    /* Sedikit diperkecil agar pas di layar standar */
     height: 6rem;
     margin: 0;
-    /* Ubah margin-left: 2rem dan margin-top menjadi 0 */
 }
 
 /* toogle */
@@ -225,7 +220,6 @@ label:active:after {
 @media (max-width: 576px) {
     .navbar {
         flex-direction: column;
-        /* Menu & icon ig/tiktok jadi atas-bawah di HP */
         gap: 1rem;
         text-align: center;
         padding-top: 1rem;
@@ -242,7 +236,6 @@ label:active:after {
 
     .containerLampu {
         flex-direction: column;
-        /* Ubah susunan dari samping menjadi ke bawah */
         align-items: center;
         text-align: center;
         margin: 1rem;
@@ -252,7 +245,6 @@ label:active:after {
 
     .containerLampu h1 {
         width: 100%;
-        /* Judul memenuhi container */
         font-size: 1.2rem;
     }
 
@@ -263,14 +255,12 @@ label:active:after {
 
     img {
         width: 4.5rem;
-        /* Ukuran lampu di HP disesuaikan agar pas */
         height: 4.5rem;
     }
 
     .tombolLampu {
         margin: 0;
         font-size: 3rem;
-        /* Ukuran saklar lampu di HP */
     }
 
     #tiktok::after {
